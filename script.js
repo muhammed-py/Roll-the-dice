@@ -9,28 +9,9 @@ let rollBtn = document.querySelector(".btn--roll"),
     currentP1 = document.querySelector("#current--1"),  //score of player 2
     scoreP1 = document.getElementById("score--1"),      //total score of player 2
     player0 = document.querySelector(".player--0"),     //player 1
-    player1 = document.querySelector(".player--1");      //player 2
+    player1 = document.querySelector(".player--1"),     //player 2
+    holdBtn = document.querySelector(".btn--hold");     //Hold button
     
-function changePlayer() {
-  if (player0.classList.contains("player--active")) {
-    player0.classList.remove('player--active');
-    player1.classList.add('player--active');
-    currentP0.textContent = 'SCORE LOST !';
-    if (RandNum == 1) {
-      scoreP0.textContent = '0';
-    }
-  }
-
-  else {
-    player1.classList.remove('player--active');
-    player0.classList.add('player--active');
-    currentP1.textContent = 'SCORE LOST !';
-    if (RandNum == 1) {
-      scoreP1.textContent = '0';
-    }
-  } 
-}
-
 
 function generateRandNum() {
 
@@ -57,20 +38,53 @@ function generateRandNum() {
 
   if (RandNum == 1) {
 
-     changePlayer();
+    if (player0.classList.contains("player--active")) {
+      player0.classList.remove('player--active');
+      player1.classList.add('player--active');
+      currentP0.textContent = 'SCORE LOST !';
+      if (RandNum == 1) {
+        scoreP0.textContent = '0';
+      }
+    }
 
+    else {
+      player1.classList.remove('player--active');
+      player0.classList.add('player--active');
+      currentP1.textContent = 'SCORE LOST !';
+      if (RandNum == 1) {
+        scoreP1.textContent = '0';
+      }
+    }
   }
 
-       
+  holdBtn.addEventListener("click", () => {
+  
+  if (player0.classList.contains("player--active")) {
+    player0.classList.remove('player--active');
+    player1.classList.add('player--active');
+    currentP0.textContent = 'SCORE PAUSED !';
+  }
 
-       
+  else {
+    player1.classList.remove('player--active');
+    player0.classList.add('player--active');
+    currentP1.textContent = 'SCORE PAUSED !';
+  }
+  }
+  )
 
-        
-         
+  if (scoreP0.textContent >= '100') {
+    // what happens when player 1 wins
+  }
 
+  else if (scoreP1.textContent >= '100') {
+    // what happens when player 2 wins
+  }
 }
 
+rollBtn.addEventListener("click", generateRandNum);
 
-rollBtn.addEventListener("click", generateRandNum)
+
+
 
 
