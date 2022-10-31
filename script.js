@@ -57,21 +57,6 @@ function generateRandNum() {
     }
   }
 
-  holdBtn.addEventListener("click", () => {
-  
-  if (player0.classList.contains("player--active")) {
-    player0.classList.remove('player--active');
-    player1.classList.add('player--active');
-    currentP0.textContent = 'SCORE PAUSED !';
-  }
-
-  else {
-    player1.classList.remove('player--active');
-    player0.classList.add('player--active');
-    currentP1.textContent = 'SCORE PAUSED !';
-  }
-  }
-  )
 
   if (scoreP0.textContent >= '100') {
     // what happens when player 1 wins
@@ -83,6 +68,22 @@ function generateRandNum() {
 }
 
 rollBtn.addEventListener("click", generateRandNum);
+
+holdBtn.addEventListener("click", () => {
+
+  if (player0.classList.contains("player--active")) {
+    player0.classList.remove('player--active');
+    player1.classList.add('player--active');
+    currentP0.textContent = 'SCORE PAUSED !';
+  }
+
+  else if (player1.classList.contains("player--active")) {
+    player1.classList.remove('player--active');
+    player0.classList.add('player--active');
+    currentP1.textContent = 'SCORE PAUSED !';
+  }
+}
+)
 
 
 
