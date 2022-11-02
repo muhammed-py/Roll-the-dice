@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
@@ -68,6 +68,7 @@ main {
 }
 .player--active .name {
   font-weight: 700;
+  
 }
 .player--active .score {
   font-weight: 400;
@@ -83,6 +84,7 @@ main {
   border-radius: 9px;
   color: #fff;
   width: 65%;
+  height: auto;
   padding: 2rem;
   text-align: center;
   transition: all 0.75s;

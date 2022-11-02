@@ -10,7 +10,10 @@ let rollBtn = document.querySelector(".btn--roll"),
     scoreP1 = document.getElementById("score--1"),      //total score of player 2
     player0 = document.querySelector(".player--0"),     //player 1
     player1 = document.querySelector(".player--1"),     //player 2
-    holdBtn = document.querySelector(".btn--hold");     //Hold button
+    holdBtn = document.querySelector(".btn--hold"),     //Hold button
+    newGameBtn = document.querySelector(".btn--new"),   //new game button
+    player0Win = document.querySelector(".player0--win"),    
+    player1Win = document.querySelector(".player1--win");    
     
 
 function generateRandNum() {
@@ -58,12 +61,14 @@ function generateRandNum() {
   }
 
 
-  if (scoreP0.textContent >= '100') {
-    // what happens when player 1 wins
+  if (scoreP0.textContent >= '50') {
+    player0.classList.add('player--winner');
+    player0Win.classList.remove("hidden");
   }
 
-  else if (scoreP1.textContent >= '100') {
-    // what happens when player 2 wins
+  else if (scoreP1.textContent >= '50') {
+    player1.classList.add('player--winner');
+    player1Win.classList.remove("hidden");
   }
 }
 
@@ -83,7 +88,9 @@ holdBtn.addEventListener("click", () => {
     currentP1.textContent = 'SCORE PAUSED !';
   }
 }
-)
+);
+
+newGameBtn.addEventListener("click", () => {location.reload()})
 
 
 
