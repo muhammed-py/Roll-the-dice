@@ -44,7 +44,7 @@ function generateRandNum() {
     if (player0.classList.contains("player--active")) {
       player0.classList.remove('player--active');
       player1.classList.add('player--active');
-      currentP0.textContent = 'SCORE LOST !';
+      currentP0.textContent = 'SCORE LOST !'; 
       if (RandNum == 1) {
         scoreP0.textContent = '0';
       }
@@ -61,14 +61,20 @@ function generateRandNum() {
   }
 
 
-  if (scoreP0.textContent >= '50') {
+  if (scoreP0.textContent >= 5) {
+    currentP0.textContent = "WINNER !"
     player0.classList.add('player--winner');
     player0Win.classList.remove("hidden");
+    holdBtn.classList.add("hidden");
+    rollBtn.classList.add("hidden");
   }
 
-  else if (scoreP1.textContent >= '50') {
+  else if (scoreP1.textContent >= 5) {
+    currentP1.textContent = "WINNER !"
     player1.classList.add('player--winner');
     player1Win.classList.remove("hidden");
+    holdBtn.classList.add("hidden");
+    rollBtn.classList.add("hidden");
   }
 }
 
