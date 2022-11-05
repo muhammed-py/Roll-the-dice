@@ -61,7 +61,7 @@ function generateRandNum() {
   }
 
 
-  if (scoreP0.textContent >= 5) {
+  if (scoreP0.textContent >= 50) {
     currentP0.textContent = "WINNER !"
     player0.classList.add('player--winner');
     player0Win.classList.remove("hidden");
@@ -69,7 +69,7 @@ function generateRandNum() {
     rollBtn.classList.add("hidden");
   }
 
-  else if (scoreP1.textContent >= 5) {
+  else if (scoreP1.textContent >= 50) {
     currentP1.textContent = "WINNER !"
     player1.classList.add('player--winner');
     player1Win.classList.remove("hidden");
